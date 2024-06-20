@@ -58,6 +58,8 @@
 
 # Bug 回報、意見回饋與聯繫
 
-本專案開發中，遇到Bug、意見回饋可以不令色開issus給我 :D
+本專案開發中，遇到Bug、意見回饋可吝嗇開issus給我 :D
 
 或是你可以使用 [discord](https://discordapp.com/users/601819508943880193) 或是 [Email](mailto:jz744335@gmail.com) 聯絡我
+
+如果你覺得這個專案對你有幫助，歡迎給我一顆星星，這可以給我有很大的動力持續更新。
