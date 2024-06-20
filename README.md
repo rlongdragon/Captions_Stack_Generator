@@ -1,4 +1,4 @@
-# 字幕拼貼器
+<h1>字幕拼貼器<img src="images/icon128.png" style="height: 1em"></h1>
 
 這個 Chrome Extension 可以讓您快速將 YouTube 影片片段和字幕拼貼成圖片。您可以輕鬆製作梗圖、分享精彩片段。它提供一鍵截取，讓您輕鬆製作完美的 YouTube 字幕截圖。
 
@@ -12,10 +12,10 @@
 
 你可以在影片網站（YouTube、巴哈姆特動畫瘋）中開啟這個擴充功能
 
-![](readmeImgs\step1-1.png)
+![](readmeImgs/step1-1.png)
 
 你可以看到兩個按鈕 `開啟編輯器`以及`擷取關鍵幀`，開始使用時請先按下`開啟編輯器`開啟編輯器彈出視窗。
-![](readmeImgs\step1-2.png)
+![](readmeImgs/step1-2.png)
 
 當你找到想記錄的關鍵幀按下`擷取關鍵幀`即可將該畫面加入至編輯器。
 
