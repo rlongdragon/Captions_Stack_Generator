@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+  <title>Document</title>
+  <style>
+    #app {
+      --imageOffset: 0px;
+      margin-top: var(--imageOffset);
+    }
+
+    .container {
+      width: 384px;
+      display: inline-block;
+      margin: 8px;
+      border: gray 3px solid;
+      padding: 8px;
+      vertical-align: top;
+      min-height: 100px;
+    }
+
+    .container h2 {
+      margin: 0;
+    }
+
+    .number-ipt {
+      width: 50px;
+    }
+
+    .screenshotImg {
+      width: 384px;
+      display: block;
+      position: relative;
+      margin-top: calc(-1*var(--imageOffset));
+    }
+  </style>
+
+  <script src="../scripts/html2canvas.js"></script>
+</head>
+
+<body>
+  <h1>YouTube 字幕拼貼器 Beta 0.1.0</h1>
+  <div class="container">
+    <h2>編輯區</h2>
+    <div id="setup">
+      <input id="min-offset" class="number-ipt" type="number" min="0" step="1" value="20"></input>
+      <input id="offset" class="number-ipt" type="range" min="0" step="1" value="48" style="width: 120px;"></input>
+      <input id="max-offset" class="number-ipt" type="number" min="0" step="1" value="60"></input>
+    </div>
+    <br>
+    <div id="app"></div>
+  </div>
+  <div class="container">
+    <h2>輸出區</h2>
+    <span>圖片縮放</span><input id="scale" class="number-ipt" type="number" min="0" step="1" value="1"></input>
+    <button id="generate">產生圖片</button>
+    <button id="copyImg">複製圖片</button>
+    <button id="downloadImg">下載圖片</button>
+    <br>
+    <br>
+    <div id="preview"></div>
+  </div>
+
+
+  beta 0.1.0 copyright (c) 2024 @rlongdragon
+  <script src="../scripts/editor.js"></script>
+</body>
+
+</html>
