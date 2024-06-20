@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "台詞拼貼器",
+  "name": "字幕拼貼器",
   "version": "0.1.0",
   "description": "這個 Chrome Extension 可以讓您快速將 YouTube 影片片段和字幕拼貼成圖片。您可以輕鬆製作梗圖、分享精彩片段。它提供一鍵截取，讓您輕鬆製作完美的 YouTube 字幕截圖。",
   "icons": {
