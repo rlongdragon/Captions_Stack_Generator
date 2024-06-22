@@ -5,29 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
-  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>字幕拼貼器 編輯器</title>
   <style>
     #app {
       --imageOffset: 0px;
       margin-top: var(--imageOffset);
-    }
-
-    .container {
-      width: 384px;
-      display: inline-block;
-      margin: 8px;
-      border: gray 3px solid;
-      padding: 8px;
-      vertical-align: top;
-      min-height: 100px;
-    }
-
-    .container h2 {
-      margin: 0;
-    }
-
-    .number-ipt {
-      width: 50px;
     }
 
     .screenshotImg {
@@ -41,31 +24,48 @@
   <script src="../scripts/html2canvas.js"></script>
 </head>
 
-<body>
+<body style="overflow-x: hidden; overflow-y: auto; width: 870px;" class="custom-scrollbar">
   <h1>YouTube 字幕拼貼器 Beta 0.1.0</h1>
   <div class="container">
-    <h2>編輯區</h2>
-    <div id="setup">
-      <input id="min-offset" class="number-ipt" type="number" min="0" step="1" value="20"></input>
-      <input id="offset" class="number-ipt" type="range" min="0" step="1" value="48" style="width: 120px;"></input>
-      <input id="max-offset" class="number-ipt" type="number" min="0" step="1" value="60"></input>
-    </div>
-    <br>
-    <div id="app"></div>
+    <h1>編輯區</h2>
+      <div id="setup">
+        <input id="min-offset" class="number-ipt" type="number" min="0" step="1" value="20"></input>
+        <input id="offset" class="number-ipt" type="range" min="0" step="1" value="48" style="width: 120px;"></input>
+        <input id="max-offset" class="number-ipt" type="number" min="0" step="1" value="60"></input>
+      </div>
+      <br>
+      <div id="app"></div>
   </div>
   <div class="container">
-    <h2>輸出區</h2>
-    <span>圖片縮放</span><input id="scale" class="number-ipt" type="number" min="0" step="1" value="1"></input>
-    <button id="generate">產生圖片</button>
-    <button id="copyImg">複製圖片</button>
-    <button id="downloadImg">下載圖片</button>
+    <h1>輸出區</h2>
+      <span>圖片畫質倍率</span><input id="scale" class="number-ipt" type="number" min="0" step="1" value="4"></input>
+      <button id="generate" class="button-inline">產生圖片</button>
+      <button id="copyImg" class="button-inline">複製圖片</button>
+      <button id="downloadImg" class="button-inline">下載圖片</button>
+      <br>
+      <br>
+      <div id="preview"></div>
+  </div>
+  <div id="menu" class="menu menuArea">
+    <button id="upImg"><img src="icons/upImg.png">上移一層</button>
+    <button id="downImg"><img src="icons/downImg.png">下移一層</button>
+    <button id="topImg"><img src="icons/topImg.png">移到最上層</button>
+    <button id="bottomImg"><img src="icons/bottomImg.png">移到最下層</button>
+    <button id="customOffset"><img src="icons/customOffset.png">單獨偏移</button>
+    <button id="deleteImg"><img src="icons/deleteImg.png">刪除圖片</button>
+  </div>
+  <div id="setCustomOffset" class="menu menuArea">
+    <h2 class="menuArea">單獨設定圖片偏移</h2>
+    <span class="menuArea">圖片偏移　</span><input id="customOffsetValue" class="number-ipt menuArea" type="number" min="0" step="1" value="48"></input><br>
+    <br>
+    <button class="button-inline menuArea" id="lastOffset">沿用上次設定值　<span id="lastOffsetValue">48</span></button>
     <br>
     <br>
-    <div id="preview"></div>
+    <button class="button-inline menuArea" id="showAll">露出整張圖片</button><br>
   </div>
 
 
-  beta 0.1.0 copyright (c) 2024 @rlongdragon
+  <div class="copyright">beta 0.1.0 copyright (c) 2024 @rlongdragon</div>
   <script src="../scripts/editor.js"></script>
 </body>
 

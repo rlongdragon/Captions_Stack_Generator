@@ -34,7 +34,7 @@ document.getElementById("popEditor").addEventListener('click', () => {
   chrome.windows.create({
     url: chrome.runtime.getURL("./popup/editor.html"),
     type: "popup",
-    width: 897,
+    width: 898,
     height: 400,
     focused: true,
   });

@@ -1,0 +1,122 @@
+main {
+  padding: 15px
+}
+
+.button-block {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button-block:hover {
+  background-color: hsl(122, 39%, 36%);
+}
+
+.button-inline {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  padding: 7px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  vertical-align: middle;
+}
+
+.button-inline:hover {
+  background-color: hsl(122, 39%, 36%);
+}
+
+.copyright {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+  text-align: center
+}
+
+.container {
+  width: 384px;
+  display: inline-block;
+  margin: 8px;
+  border: 5px solid hsl(122, 39%, 49%);
+  border-radius: 15px;
+  padding: 8px;
+  vertical-align: top;
+  min-height: 100px;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+.number-ipt {
+  width: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  border: hsl(122, 39%, 49%) 3px solid;
+  vertical-align: middle;
+}
+
+.number-ipt :focus {
+  border: hsl(122, 39%, 36%) 3px solid;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background-color: hsla(0, 0%, 79%, 0.25);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+}
+
+.menu {
+  position: fixed;
+  display: none;
+  background-color: #f0f0f0b0;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+#menu button {
+  display: block;
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+#menu button:hover {
+  background-color: hsla(0, 0%, 0%, 0.068);
+}
+
+#menu button img {
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+
+#setCustomOffset h2 {
+  margin: 0;
+}
+#setCustomOffset input {
+  background-color: #00000000;
+}
