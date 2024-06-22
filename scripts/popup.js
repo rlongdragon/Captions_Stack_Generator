@@ -16,17 +16,14 @@ document.getElementById("screenshot").addEventListener('click', () => {
         videoData: c.toDataURL()
       };
 
-      console.log((async () => {
-        const response = await chrome.runtime.sendMessage(option);
-        console.log(response);
-      })());
+      chrome.runtime.sendMessage(option);
     };
 
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: getVideoScreenshot,
 
-    }).then(() => console.log('Injected a function!'));
+    }).then(() => console.log('擷取關鍵影格'));
   });
 });
 
@@ -51,5 +48,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       break;
   }
 
-  sendResponse({ farewell: "thanks for sending! goodbye awa" });
 });

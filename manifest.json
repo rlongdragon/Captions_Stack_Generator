@@ -16,14 +16,21 @@
     "service_worker": "background.js",
     "type": "module"
   },
+  "commands": {
+    "screenshot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "擷取關鍵影格的快捷鍵"
+    }
+  },
   "host_permissions": [
     "http://www.youtube.com/*",
     "https://www.youtube.com/*"
   ],
   "permissions": [
-    "nativeMessaging",
     "activeTab",
-    "scripting",
-    "storage"
+    "scripting"
   ]
 }
