@@ -19,8 +19,7 @@
   "commands": {
     "screenshot": {
       "suggested_key": {
-        "default": "Ctrl+Shift+S",
-        "mac": "Command+Shift+S"
+        "default": "Alt+S"
       },
       "description": "擷取關鍵影格的快捷鍵"
     }
