@@ -35,10 +35,6 @@ function updateImgs() {
       let contextMenu = document.getElementById("menu");
       contextMenu.style.display = "block";
       contextMenu.style.left = e.clientX + "px";
-      console.log({
-        nowButton: e.clientY + parseInt((contextMenu.getBoundingClientRect()).height),
-        maxButton: window.innerHeight
-      })
       if (e.clientY + parseInt((contextMenu.getBoundingClientRect()).height) > window.innerHeight){
         contextMenu.style.top = (window.innerHeight - (contextMenu.getBoundingClientRect()).height) + "px"
       } else {
