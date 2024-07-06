@@ -75,45 +75,56 @@ document.getElementById("offset").addEventListener("input", () => {
 });
 
 let canvasBlob;
-function generate() {
-  html2canvas(document.getElementById("app"), { backgroundColor: null, scale: parseInt(document.getElementById("scale").value) }).then(function (canvas) {
-    document.getElementById("preview").innerHTML = "";
-    document.getElementById("preview").appendChild(canvas);
-    canvas.toBlob(function (blob) {
-      canvasBlob = blob;
-    });
-  });
+async function generate() {
+  return (new Promise((resole, reject) => {
+    try {
+      html2canvas(document.getElementById("app"), { backgroundColor: null, scale: parseInt(document.getElementById("scale").value) }).then(function (canvas) {
+        document.getElementById("preview").innerHTML = "";
+        document.getElementById("preview").appendChild(canvas);
+        canvas.toBlob(function (blob) {
+          canvasBlob = blob;
+          resole(1)
+        });
+      });
+    } catch {
+      reject(0)
+    }
+  }))
 }
 document.getElementById("generate").addEventListener("click", generate);
 
-function copyImg() {
-  if (canvasBlob) {
-    const item = new ClipboardItem({ "image/png": canvasBlob });
-    navigator.clipboard.write([item]).then(function () {
-      console.log("Image copied to clipboard");
-    }).catch(function (error) {
-      console.error("Unable to write to clipboard. Error:", error);
-    });
+async function copyImg() {
+  if (!canvasBlob) {
+    console.log(await generate())
   }
+
+  const item = new ClipboardItem({ "image/png": canvasBlob });
+  navigator.clipboard.write([item]).then(function () {
+    console.log("Image copied to clipboard");
+  }).catch(function (error) {
+    console.error("Unable to write to clipboard. Error:", error);
+  });
 }
 document.getElementById("copyImg").addEventListener("click", copyImg);
 
-function downloadImg() {
-  if (canvasBlob) {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.href = URL.createObjectURL(canvasBlob);
-    let date = new Date();
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    let hour = date.getHours();
-    let min = date.getMinutes();
-    let sec = date.getSeconds();
-    a.download = `screenshot_${year}${month}${day}_${hour}${min}${sec}.png`;
-    a.click();
-    document.body.removeChild(a);
+async function downloadImg() {
+  if (!canvasBlob) {
+    console.log(await generate())
   }
+
+  const a = document.createElement("a");
+  document.body.appendChild(a);
+  a.href = URL.createObjectURL(canvasBlob);
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let hour = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  a.download = `screenshot_${year}${month}${day}_${hour}${min}${sec}.png`;
+  a.click();
+  document.body.removeChild(a);
 }
 document.getElementById("downloadImg").addEventListener("click", downloadImg);
 
@@ -189,13 +200,13 @@ let lestSetCustomOffsetValue = 48;
 document.getElementById("customOffset").addEventListener("click", () => {
   lestSetCustomOffsetValue = document.getElementById("customOffsetValue").value;
   document.getElementById("lastOffsetValue").innerText = lestSetCustomOffsetValue;
-  
-  document.getElementById("customOffsetValue").value = 
-    document.querySelectorAll(".screenshotImg")[activeImg].style.getPropertyValue("--imageOffset") 
-    ? 
-    216 - parseInt(document.querySelectorAll(".screenshotImg")[activeImg].style.getPropertyValue("--imageOffset")) 
-    : 
-    216 - parseInt(document.getElementById("app").style.getPropertyValue("--imageOffset"));
+
+  document.getElementById("customOffsetValue").value =
+    document.querySelectorAll(".screenshotImg")[activeImg].style.getPropertyValue("--imageOffset")
+      ?
+      216 - parseInt(document.querySelectorAll(".screenshotImg")[activeImg].style.getPropertyValue("--imageOffset"))
+      :
+      216 - parseInt(document.getElementById("app").style.getPropertyValue("--imageOffset"));
 
   let setCustomOffset = document.getElementById("setCustomOffset")
   setCustomOffset.style.left = activePosition[0].x + "px";
