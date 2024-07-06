@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>使用指引</title>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src *;">
+
+  <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+  <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+
+  <!-- Load the element definition -->
+  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+
+</head>
+
+<body>
+  <h1>使用指引</h1>
+
+  <p>這個 Chrome Extension 可以讓您快速將 YouTube 影片片段和字幕拼貼成圖片。您可以輕鬆製作梗圖、分享精彩片段。它提供一鍵截取，讓您輕鬆製作完美的 YouTube 字幕截圖。</p>
+  <h1 class="atx" id="使用說明">使用說明</h1>
+  <h2 class="atx" id="啟動擴充功能">啟動擴充功能</h2>
+  <p>你可以在影片網站（YouTube、巴哈姆特動畫瘋）中開啟這個擴充功能</p>
+  <p>你可以看到兩個按鈕 <code>擷取關鍵影格</code>以及<code>開啟編輯器</code>，開始使用時請先按下<code>開啟編輯器</code>開啟如下圖的彈出視窗編輯器。
+  <p>當你找到想記錄的關鍵幀按下<code>擷取關鍵幀</code>即可將該畫面加入至編輯器。</p>
+  <blockquote>
+  <p>你也可以使用 預設<code>Alt</code>(mac 為 <code>Option</code>) + <code>S</code> 快速擷取關鍵影格</p>
+  </blockquote>
+  <h2 class="atx" id="使用編輯器">使用編輯器</h2>
+  <p>當你選好圖片之後，可以用上方滑桿調整字幕與畫面下緣距離，滑桿左右兩輸入框是滑桿的最小以及最大值，可以調整兩數值來調正滑桿的精準度。20-60就足夠應付大部分的使用場景了。</p>
+  <h3 class="atx" id="右鍵選單">右鍵選單</h3>
+  <p>如果你想對特定圖片進行操作（移動圖片層級、單獨設定偏移、刪除圖片等）可以對目標圖片按下右鍵。</p>
+  <p>此時會彈出右鍵選單，而被選中的圖片則會有藍色的外框。此時你可以使用右鍵選單來對圖片進行操作。</p>
+  <blockquote>
+  <p>下面使用<a href="https://www.youtube.com/@nerdzun">人生魯宅x尊-第2頻道 - YouTube</a> <a href="https://youtu.be/Tkf8_8_nl68?si=aDExffHY4LtQBAHa">【尊】我找了小玉一起來看小玉梗圖...【第二頻道】 - YouTube</a> 實際應用</p>
+  </blockquote>
+  <h4 class="atx" id="實際範例">實際範例</h4>
+  <p>首先，我已經捷好了一些圖片，並且已經調整好了字幕與畫面下緣距離。</p>
+  <p>我發現我第一張圖片不小心截到兩張了，我想要將第二張圖片刪除。</p>
+  <table>
+    <tbody><tr>
+      <td><img width="400" src="../../readmeImgs/step2-1.png"></td>
+      <td><img width="400" src="../readmeImgs/step2-2.png"></td>
+    </tr>
+  </tbody></table>
+  
+  <p>後來我發現，影片中是先講「我覺得是時候」才講「跟你們一並告知了」。</p>
+  <p>所以我需要將兩張圖片交換位置。</p>
+  <table>
+    <tbody><tr>
+      <td><img width="400" src="../readmeImgs/step2-3.png"></td>
+      <td><img width="400" src="../readmeImgs/step2-4.png"></td>
+    </tr>
+  </tbody></table>
+  
+  <p>然後我發現影片中有些字幕大小比較大，那些圖片需要下移一點。</p>
+  <table>
+    <tbody><tr>
+      <td><img width="400" src="../readmeImgs/step2-5.png"></td>
+      <td><img width="400" src="../readmeImgs/step2-6.png"></td>
+    </tr>
+  </tbody></table>
+  
+  <p>下面還有幾張圖片也是要調整，這時我可以直接使用<code>沿用上次設定值</code>直接套用</p>
+  <table>
+    <tbody><tr>
+      <td><img width="400" src="../readmeImgs/step2-7.png"></td>
+      <td><img width="400" src="../readmeImgs/step2-8.png"></td>
+    </tr>
+  </tbody></table>
+  
+  <p>最後，最後一張圖片是需要完整顯示出來的，所以我使用<code>露出整張圖片</code>來調整。</p>
+  <table>
+    <tbody><tr>
+      <td><img width="400" src="../readmeImgs/step2-9.png"></td>
+      <td><img width="400" src="../readmeImgs/step2-10.png"></td>
+    </tr>
+  </tbody></table>
+  
+  <h3 class="atx" id="輸出以及儲存圖片">輸出以及儲存圖片</h3>
+  <p>調整好後可以在輸出區按<code>產生圖片</code>，來渲染拼貼圖，並預覽。</p>
+  <p>渲染完後你可以直接使用<code>複製圖片</code>按鈕，快速將圖片複製到剪貼簿，或是使用<code>下載圖片</code>按鈕將圖片下載至本機。</p>
+  <h1 class="atx" id="未來更新">未來更新</h1>
+  <ul>
+  <li><p>特殊排版</p>
+  </li>
+  <li><p>兼容CC字幕</p>
+  </li>
+  <li><p>偵測CC字幕自動生成</p>
+  </li>
+  </ul>
+  <h1 class="atx" id="bug-回報、意見回饋與聯繫">Bug 回報、意見回饋與聯繫</h1>
+  <p>本專案開發中，遇到Bug、意見回饋可不吝嗇開issus給我 :D</p>
+  <p>或是你可以使用 <a href="https://discordapp.com/users/601819508943880193">discord</a> 或是 <a href="mailto:jz744335@gmail.com">Email</a> 聯絡我</p>
+  <p>如果你覺得這個專案對你有幫助，歡迎給我一顆星星，這可以給我有很大的動力持續更新。</p>
+  
+
+</body>
+
+</html>

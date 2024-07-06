@@ -38,6 +38,9 @@ document.getElementById("popEditor").addEventListener('click', () => {
   window.top = window;
 });
 
+document.getElementById("howToUse").addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("./popup/help.html") });
+})
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.action) {

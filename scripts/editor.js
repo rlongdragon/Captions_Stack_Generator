@@ -1,3 +1,11 @@
+window.onload = () => {
+  const option = {
+    action: "editorWindowOnload",
+  };
+  chrome.runtime.sendMessage(option)
+}
+
+
 let activeImg = 0;
 let activePosition = [{ x: 0, y: 0 }];
 
@@ -46,6 +54,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       document.getElementById("app").appendChild(img);
       updateImgs();
       break;
+    case "checkEditorOpened":
+      sendResponse(1)
+      break
   }
 
   sendResponse({ farewell: "thanks for sending! goodbye" });
