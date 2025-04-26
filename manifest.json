@@ -25,7 +25,7 @@
     }
   },
   "host_permissions": [
-    "https://music.youtube.com/*"
+    "https://youtube.com/*"
   ],
   "permissions": [
     "activeTab",
