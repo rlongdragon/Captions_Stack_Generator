@@ -91,19 +91,32 @@ main {
   padding: 10px;
   z-index: 10000;
   backdrop-filter: blur(5px);
+
+  flex-direction: column;
 }
 
 #menu button {
-  display: block;
   background-color: #00000000;
   border: none;
   cursor: pointer;
-  margin: 5px;
+  padding: 3px 6px;
+  margin: 2px 0;
+  padding-left: 0;
   width: 100%;
   text-align: left;
 }
 
 #menu button:hover {
+  background-color: #ffffff11;
+  outline: #4CAF50 2px solid;
+  border-radius: 3px;
+}
+
+#menu button:focus {
+  outline: #4CAF50 2px solid;
+  border-radius: 3px;
+}
+#menu button:active {
   background-color: hsla(0, 0%, 0%, 0.068);
 }
 

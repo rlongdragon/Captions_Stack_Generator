@@ -5,7 +5,6 @@ window.onload = () => {
   chrome.runtime.sendMessage(option)
 }
 
-
 let activeImg = 0;
 let activePosition = [{ x: 0, y: 0 }];
 
@@ -33,9 +32,9 @@ function updateImgs() {
       img.style.outline = "5px solid #2453c2";
       img.style.borderRadius = "5px";
       let contextMenu = document.getElementById("menu");
-      contextMenu.style.display = "block";
+      contextMenu.style.display = "flex";
       contextMenu.style.left = e.clientX + "px";
-      if (e.clientY + parseInt((contextMenu.getBoundingClientRect()).height) > window.innerHeight){
+      if (e.clientY + parseInt((contextMenu.getBoundingClientRect()).height) > window.innerHeight) {
         contextMenu.style.top = (window.innerHeight - (contextMenu.getBoundingClientRect()).height) + "px"
       } else {
         contextMenu.style.top = e.clientY + "px";
@@ -47,7 +46,6 @@ function updateImgs() {
   }
   document.getElementById("app").style.setProperty("--imageOffset", (216 - offset) + "px");
 }
-
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.action) {
@@ -145,28 +143,27 @@ document.getElementById("downloadImg").addEventListener("click", downloadImg);
 
 // menu
 document.body.addEventListener("click", (e) => {
-  if (!(e.target.className.includes("menuArea"))) {
-    console.log(e.target.className);
-    if (document.getElementById("menu").style.display !== "none") {
-      document.getElementById("menu").style.display = "none";
+  if ((e.target.className.includes("menuArea"))) return;
+  console.log(e.target.className);
+  if (document.getElementById("menu").style.display !== "none") {
+    document.getElementById("menu").style.display = "none";
 
-      if (document.getElementById("setCustomOffset").style.display === "none") {
-        let app = document.getElementById("app");
-        let imgs = app.getElementsByClassName("screenshotImg");
-        for (let i = 0; i < imgs.length; i++) {
-          imgs[i].style.outline = "none";
-          imgs[i].style.borderRadius = "0px";
-        }
-      }
-    } else if (document.getElementById("setCustomOffset").style.display !== "none") {
-      document.getElementById("setCustomOffset").style.display = "none";
-
+    if (document.getElementById("setCustomOffset").style.display === "none") {
       let app = document.getElementById("app");
       let imgs = app.getElementsByClassName("screenshotImg");
       for (let i = 0; i < imgs.length; i++) {
         imgs[i].style.outline = "none";
         imgs[i].style.borderRadius = "0px";
       }
+    }
+  } else if (document.getElementById("setCustomOffset").style.display !== "none") {
+    document.getElementById("setCustomOffset").style.display = "none";
+
+    let app = document.getElementById("app");
+    let imgs = app.getElementsByClassName("screenshotImg");
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].style.outline = "none";
+      imgs[i].style.borderRadius = "0px";
     }
   }
 });
