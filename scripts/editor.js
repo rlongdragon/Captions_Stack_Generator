@@ -209,7 +209,7 @@ document.getElementById("bottomImg").addEventListener("click", () => {
 
 // let lestSetCustomOffsetValue = document.querySelectorAll(".screenshotImg")[activeImg].style.getPropertyValue("--imageOffset");
 let lestSetCustomOffsetValue = 48;
-document.getElementById("customOffset").addEventListener("click", () => {
+document.getElementById("customOffset").addEventListener("click", (e) => {
   lestSetCustomOffsetValue = document.getElementById("customOffsetValue").value;
   document.getElementById("lastOffsetValue").innerText = lestSetCustomOffsetValue;
 
@@ -221,9 +221,15 @@ document.getElementById("customOffset").addEventListener("click", () => {
       216 - parseInt(document.getElementById("app").style.getPropertyValue("--imageOffset"));
 
   let setCustomOffset = document.getElementById("setCustomOffset")
-  setCustomOffset.style.left = activePosition[0].x + "px";
-  setCustomOffset.style.top = activePosition[0].y + "px";
   setCustomOffset.style.display = "block";
+  setCustomOffset.style.left = activePosition[0].x + "px";
+  console.log(parseInt((setCustomOffset.getBoundingClientRect()).height))
+  if (activePosition[0].y + parseInt((setCustomOffset.getBoundingClientRect()).height) > window.innerHeight) {
+    setCustomOffset.style.top = (window.innerHeight - (setCustomOffset.getBoundingClientRect()).height) + "px"
+  } else {
+    setCustomOffset.style.top = activePosition[0].y + "px";
+    // setCustomOffset.style.top = e.clientY + "px";
+  }
 });
 document.getElementById("lastOffset").addEventListener("click", () => {
   document.getElementById("customOffsetValue").value = lestSetCustomOffsetValue;
