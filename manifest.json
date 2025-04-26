@@ -4,13 +4,13 @@
   "version": "1.1.7",
   "description": "這個 Chrome Extension 可以讓您快速將 YouTube 影片片段和字幕拼貼成圖片。您可以輕鬆製作梗圖、分享精彩片段。它提供一鍵截取，讓您輕鬆製作完美的 YouTube 字幕截圖。",
   "icons": {
-    "128": "./images/icon128.png",
-    "48": "./images/icon48.png",
-    "16": "./images/icon16.png"
+    "128": "images/icon128.png",
+    "48": "images/icon48.png",
+    "16": "images/icon16.png"
   },
   "action": {
-    "default_icon": "./images/icon16.png",
-    "default_popup": "./popup/popup.html"
+    "default_icon": "images/icon16.png",
+    "default_popup": "popup/popup.html"
   },
   "background": {
     "service_worker": "background.js",
